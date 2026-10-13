@@ -70,6 +70,7 @@ jobs:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           testMode: ${{ matrix.testMode }}
           artifactsPath: ${{ matrix.testMode }}-test-results
+          customParameters: -nographics
 
 
       # Upload test results (including on failure — `if: always()`)
