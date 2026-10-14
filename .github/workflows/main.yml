@@ -48,7 +48,6 @@ jobs:
           key: Library-Tests-${{ matrix.testMode }}-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
           restore-keys: |
             Library-Tests-${{ matrix.testMode }}-
-            Library-Tests-
 
       # Run the tests. The Docker image is picked automatically to match
       # the Unity version in ProjectSettings/ProjectVersion.txt.
