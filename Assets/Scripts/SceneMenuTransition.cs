@@ -3,9 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneMenuTransition : MonoBehaviour
 {
-    public void ChangeScene(string sceneName) 
+    public void ChangeScene() 
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene("Level1");
     }
 
     public void QuitGame()
