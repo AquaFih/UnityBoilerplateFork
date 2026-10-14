@@ -14,7 +14,10 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
+
+    private SpriteRenderer spriteRenderer;
 
     // Update is called once per frame
     void Update()
@@ -23,10 +26,12 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             rb.linearVelocity = new Vector2(-speed, rb.linearVelocity.y);
+            spriteRenderer.flipX = true;
         }
         else if (Input.GetKey(KeyCode.D))
         {
             rb.linearVelocity = new Vector2(speed, rb.linearVelocity.y);
+            spriteRenderer.flipX = false;
         }
 
         // Jumping
@@ -43,10 +48,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    // Mark grounded if it touches an object with tag ground
+    // Mark grounded if it touches an object with tag platform
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Ground"))
+        if (other.gameObject.CompareTag("Platform"))
         {
             isGrounded = true;
         }

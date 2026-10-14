@@ -29,4 +29,13 @@ public class LevelUIController : MonoBehaviour
         }
 
     }
+
+    public void Collect()
+    {
+        score++;
+        if (score == 3)
+        {
+            SceneManager.LoadScene("Win");
+        }
+    }
 }
