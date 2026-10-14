@@ -20,6 +20,20 @@ public class LevelUIController : MonoBehaviour
         timeLabel.text = "Time: " + totalTime.ToString(format: "0.0") + "s";
     }
 
+    public void ReturnToMenu(string sceneName)
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void QuitGame()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
+    }
+
     public void Kill()
     {
         lives--;
