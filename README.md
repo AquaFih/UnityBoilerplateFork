@@ -21,7 +21,7 @@ WebGL link: https://AquaFih.github.io/UnityBoilerplateFork/
 - [ ] I changed the `Settings` > `Pages` > `Source` to **GitHub Actions**;
 - [ ] I opened the project locally in Unity 6000.x, made a change, and committed and pushed it to the `main` or `master` branch of the repository;
 - [ ] I saw and waited the GitHub Actions run execute on the `Actions` tab;
-- [ ] I can open the web build in the browser at the url: https://brrainsoup.github.io/UnityBoilerplateFork/
+- [ ] I can open the web build in the browser at the url: https://AquaFih.github.io/UnityBoilerplateFork/
 
 # The pipeline:
 
