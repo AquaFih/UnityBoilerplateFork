@@ -1861,8 +1861,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   speed: 5
-  jumpSpeed: 7.5
+  jumpSpeed: 6
   isGroundDumping: 0.9
+  isAirDumping: 0.99
   canInteract: 0
 --- !u!61 &953823772
 BoxCollider2D:
