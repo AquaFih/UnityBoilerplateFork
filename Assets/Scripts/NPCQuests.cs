@@ -5,7 +5,10 @@ public class NPCQuests : MonoBehaviour
 {
     private bool playerInRange;
     private bool displayingText;
+    public bool questComplete = false;
     public GameObject questText;
+    public GameObject questText2;
+    public GameObject collectible;
     public PlayerMovement Player;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -23,12 +26,20 @@ public class NPCQuests : MonoBehaviour
             {
                 
                 questText.SetActive(false);
+                questText2.SetActive(false);
                 displayingText = false;
             }
             else
             {
-                questText.SetActive(true);
-                displayingText = true;
+                if (!questComplete)
+                {
+                    questText.SetActive(true);
+                    displayingText = true;
+                    collectible.SetActive(true);
+                } else {
+                    questText2.SetActive(true);
+                    displayingText = true;
+                }
             }
             
         }
