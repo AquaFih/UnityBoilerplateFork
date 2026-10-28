@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpSpeed;
 
     public float isGroundDumping;
+    public float isAirDumping;
     private bool isGrounded;
 
     public bool canInteract;
@@ -48,6 +49,12 @@ public class PlayerMovement : MonoBehaviour
             rb.linearVelocity = new Vector2(
             rb.linearVelocity.x * isGroundDumping,
             rb.linearVelocity.y);
+        }
+        else
+        {
+            rb.linearVelocity = new Vector2(
+                rb.linearVelocity.x * isAirDumping,
+                rb.linearVelocity.y);
         }
     }
 
