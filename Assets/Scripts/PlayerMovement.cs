@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     public float isGroundDumping;
     private bool isGrounded;
 
+    public bool canInteract;
+
     // Cache rigid body reference
     private Rigidbody2D rb;
 
@@ -58,5 +60,8 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
+    void setInteration(bool type)
+    {
+        canInteract = type; 
+    }
 }

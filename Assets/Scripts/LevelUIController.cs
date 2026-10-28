@@ -15,9 +15,9 @@ public class LevelUIController : MonoBehaviour
     {
         totalTime += Time.deltaTime;
 
-        livesLabel.text = "Lives: " + lives;
-        scoreLabel.text = "Score: " + score;
-        timeLabel.text = "Time: " + totalTime.ToString(format: "0.0") + "s";
+       // livesLabel.text = "Lives: " + lives;
+       // scoreLabel.text = "Score: " + score;
+       // timeLabel.text = "Time: " + totalTime.ToString(format: "0.0") + "s";
     }
 
     public void ReturnToMenu(string sceneName)
@@ -52,4 +52,6 @@ public class LevelUIController : MonoBehaviour
             SceneManager.LoadScene("Win");
         }
     }
+
+    
 }
