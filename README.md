@@ -9,13 +9,13 @@ WebGL link: https://AquaFih.github.io/UnityBoilerplateFork/
 
 # Scope List:
 
-- [ ] Must - Items that need to be done for the game to function
-    - [ ] A functional quest system
-    - [ ] Working abilities such as wave dash
-    - [ ] Sprites for objects and characters
-- [ ] Should - Expected items but don't need to be done
-    - [ ] Updated backgrounds/visuals
-- [ ] Could - Items that we theoretically could implement but aren't necessary
+- Must - Items that need to be done for the game to function
+    - A functional quest system
+    - Working abilities such as wave dash
+    - Sprites for objects and characters
+- Should - Expected items but don't need to be done
+    - Updated backgrounds/visuals
+- Could - Items that we theoretically could implement but aren't necessary
 
 # Setup Steps:
 
