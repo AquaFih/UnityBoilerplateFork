@@ -7,6 +7,16 @@ A Unity 6000.x project that teaches you proper CI/CD on GitHub:
 
 WebGL link: https://AquaFih.github.io/UnityBoilerplateFork/
 
+# Scope List:
+
+- [ ] Must - Items that need to be done for the game to function
+    - [ ] A functional quest system
+    - [ ] Working abilities such as wave dash
+    - [ ] Sprites for objects and characters
+- [ ] Should - Expected items but don't need to be done
+    - [ ] Updated backgrounds/visuals
+- [ ] Could - Items that we theoretically could implement but aren't necessary
+
 # Setup Steps:
 
 - [ ] I understand FERPA laws. If I make the repository public, I will remove any student information, or I am waiving the requirement to remove student information. Otherwise, I am making the repository private;
