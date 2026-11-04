@@ -60,7 +60,12 @@ public class NPCQuests : MonoBehaviour
         {
             Player.canInteract = false;
             playerInRange = false;
-            print("Out range");
+            print("Out of range");
+
+            // Hides text when player goes out of range
+            questText.SetActive(false);
+            questText2.SetActive(false);
+            displayingText = false;
         }
     }
 }
