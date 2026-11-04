@@ -18,9 +18,11 @@ public class PlayerMovement : MonoBehaviour
     private bool canDash = false;
     private bool isDashing = false;
     private bool isAiming = false;
-    private float dashingPower = 70f;
-    private float dashingTime = 0.2f;
+    public float dashingPower;
+    public float dashingTime;
 
+
+    private Animator anim;
     // Cache rigid body reference
     private Rigidbody2D rb;
 
@@ -28,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
     }
 
     private SpriteRenderer spriteRenderer;
@@ -40,20 +43,41 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
-
+        if (isGrounded){anim.SetBool("IsJumping", false); }
+        else{anim.SetBool("IsJumping", true); }
         moveInput.x = Input.GetAxis("Horizontal");
         moveInput.y = Input.GetAxis("Vertical");
         // Walk left and right
         if (Input.GetKey(KeyCode.A) && !isAiming)
         {
-            rb.linearVelocity = new Vector2(-speed, rb.linearVelocity.y);
+            if (isGrounded)
+            {
+                rb.linearVelocity = new Vector2(-speed, rb.linearVelocity.y);
+                anim.SetBool("IsRunning", true);
+            }
+            else
+            {
+                rb.linearVelocity = new Vector2(-speed / 2, rb.linearVelocity.y);
+            }
             spriteRenderer.flipX = true;
+            
         }
         else if (Input.GetKey(KeyCode.D) && !isAiming)
         {
-            rb.linearVelocity = new Vector2(speed, rb.linearVelocity.y);
+            if (isGrounded)
+            {
+                rb.linearVelocity = new Vector2(speed, rb.linearVelocity.y);
+                anim.SetBool("IsRunning", true);
+            }
+            else
+            {
+                rb.linearVelocity = new Vector2(speed/2, rb.linearVelocity.y);
+            }
             spriteRenderer.flipX = false;
+            
         }
+        else if (isGrounded) {anim.SetBool("IsRunning", false);}
+        else {anim.SetBool("IsJumping", true); }
 
         // Jumping
         if (isGrounded && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space)))
@@ -70,7 +94,7 @@ public class PlayerMovement : MonoBehaviour
             rb.linearVelocity = new Vector2(
             rb.linearVelocity.x * isGroundDumping,
             rb.linearVelocity.y);
-        } else if (Input.GetMouseButton(0))
+        } else if (Input.GetMouseButton(0) && canDash)
         {
             isAiming = true;
             spriteRenderer.flipX = false;
@@ -86,6 +110,9 @@ public class PlayerMovement : MonoBehaviour
         {
 
             StartCoroutine(Dash(rb));
+            
+            //isAiming = false;
+            //transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, 0f);
         }
         else
         {
@@ -159,5 +186,9 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(dashingTime);
         rb.gravityScale = originalGravity;
         isDashing = false;
+        yield return new WaitForSeconds(dashingTime);
+        isAiming = false;
+        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, 0f);
+        
     }
 }
