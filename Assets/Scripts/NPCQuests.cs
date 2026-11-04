@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 
@@ -6,8 +7,8 @@ public class NPCQuests : MonoBehaviour
     private bool playerInRange;
     private bool displayingText;
     public bool questComplete = false;
-    public GameObject questText;
-    public GameObject questText2;
+    public GameObject questTextObject;
+    public TextMeshProUGUI questText;
     public GameObject collectible;
     public PlayerMovement Player;
     
@@ -24,21 +25,23 @@ public class NPCQuests : MonoBehaviour
         {
             if (displayingText)
             {
-                
-                questText.SetActive(false);
-                questText2.SetActive(false);
+
+                questTextObject.SetActive(false);
                 displayingText = false;
             }
             else
             {
                 if (!questComplete)
                 {
-                    questText.SetActive(true);
+                    questTextObject.SetActive(true);
                     displayingText = true;
                     collectible.SetActive(true);
+                    questText.text = "Hi im john go collect my collectibles";
                 } else {
-                    questText2.SetActive(true);
+                    
+                    questTextObject.SetActive(true);
                     displayingText = true;
+                    questText.text = "You collected my wonderful colectibles!";
                 }
             }
             
@@ -63,8 +66,7 @@ public class NPCQuests : MonoBehaviour
             print("Out of range");
 
             // Hides text when player goes out of range
-            questText.SetActive(false);
-            questText2.SetActive(false);
+            questTextObject.SetActive(false);
             displayingText = false;
         }
     }
