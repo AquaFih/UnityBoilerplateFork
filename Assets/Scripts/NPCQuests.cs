@@ -28,8 +28,8 @@ public class NPCQuests : MonoBehaviour
             if (displayingText)
             {
 
-                questTextObject.SetActive(false);
-                displayingText = false;
+                questTextObject.SetActive(true);
+                displayingText = true;
             }
             else
             {
@@ -61,6 +61,8 @@ public class NPCQuests : MonoBehaviour
             // Wait for 1 second
             yield return new WaitForSeconds(1.5f);
             questText.text = "Go find my star and I'll show you a cool trick.";
+            yield return new WaitForSeconds(3f);
+            questText.text = "";
         }
         else
         {
@@ -70,7 +72,9 @@ public class NPCQuests : MonoBehaviour
             yield return new WaitForSeconds(3f);
             questText.text = "And then rotate in the direction you wanna dash before releasing";
             yield return new WaitForSeconds(4f);
-            questText.text = "Bye now";
+            questText.text = "Okay go use the ability. Bye now";
+            yield return new WaitForSeconds(3f);
+            questText.text = "";
         }
         
     }
