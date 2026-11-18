@@ -1,0 +1,16 @@
+
+-Movement feels floaty and unresponsive
+-You can get caught on some platforms
+-Sprite should flip during wavedash at certain angles
+-Wavedash is sometimes hard to use
+-Add more gravity?
+-wavedash dont go in the direction you point. fix the math
+-changing direction mid jump feels wonky
+-Level doesn't use the wavedash enough and its short
+-boring level
+-Pixel ratios inconsistent
+-animations dont match game speed
+-"Too fast paced"
+-Sand and ocean look flat
+-dont let the fish flip upside down
+-"One bug I noticed was that if the space bar is mashed and a dash is done, the jump resets but the dash does not. Also, if the player walks off a ledge at certain points it can still jump in midair"
