@@ -27,6 +27,13 @@ TBD
     - A functional quest system
     - Working abilities such as wave dash
     - Sprites for objects and characters
+    - Fix wavedash ability
+    - Fix players getting stuck on platforms
+    - Add more to levels
 - **Should** - Expected items but don't need to be done
     - Updated backgrounds/visuals
+    - Change the way movement feels
+    - Change visuals for wavedash
 - **Could** - Items that we theoretically could implement but aren't necessary
+    - Update music
+    - Fix mismatched sprite ratios
